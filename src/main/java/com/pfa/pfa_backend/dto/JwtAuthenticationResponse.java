@@ -1,2 +1,9 @@
-package com.pfa.pfa_backend.dto;public class JwtAuthenticationResponse {
+package com.pfa.pfa_backend.dto;
+
+import lombok.Data;
+
+@Data
+public class JwtAuthenticationResponse {
+    private String token;
+    private String refreshToken;
 }

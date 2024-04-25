@@ -2,13 +2,14 @@ package com.pfa.pfa_backend.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
 
+import java.util.Collection;
 import java.util.Date;
 
 @Getter
 @Setter
 @Entity
-
 @NoArgsConstructor
 //methode table par classe
 @Table(name="ResponsableGeneral")

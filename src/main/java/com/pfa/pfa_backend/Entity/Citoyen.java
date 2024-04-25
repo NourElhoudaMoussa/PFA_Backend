@@ -2,7 +2,9 @@ package com.pfa.pfa_backend.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
 
+import java.util.Collection;
 import java.util.Date;
 
 @Getter
@@ -19,4 +21,6 @@ public class Citoyen extends User{
         super(cin, nom, prenom, dn, ln, genre, adr, numTel, email, mdp);
         this.occupation = occupation;
     }
+
+
 }
