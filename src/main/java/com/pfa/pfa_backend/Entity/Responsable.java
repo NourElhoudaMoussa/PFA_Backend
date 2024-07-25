@@ -13,8 +13,8 @@ import java.util.Date;
     @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Responsable extends User{
 
-    public Responsable(String cin, String nom, String prenom, Date dn, String ln, String genre, String adr, String numTel, String email, String mdp) {
-        super(cin, nom, prenom, dn, ln, genre, adr, numTel, email, mdp);
+    public Responsable(String cin, String nom, String prenom, Date dn, String ln, String genre, String adr, String numTel, String email, String mdp, Role role) {
+        super(cin, nom, prenom, dn, ln, genre, adr, numTel, email, mdp,role);
     }
 
 

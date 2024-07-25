@@ -30,10 +30,11 @@ public abstract class User implements UserDetails {
     private String numTel;
     private String email;
     private String mdp;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
 
-    public User(String cin, String nom, String prenom, Date dn, String ln, String genre, String adr, String numTel, String email, String mdp) {
+    public User(String cin, String nom, String prenom, Date dn, String ln, String genre, String adr, String numTel, String email, String mdp, Role role) {
         this.cin = cin;
         this.nom = nom;
         this.prenom = prenom;
@@ -44,6 +45,7 @@ public abstract class User implements UserDetails {
         this.numTel = numTel;
         this.email = email;
         this.mdp = mdp;
+        this.role =role;
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

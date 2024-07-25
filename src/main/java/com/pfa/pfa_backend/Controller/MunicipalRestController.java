@@ -12,9 +12,11 @@ import java.util.List;
 //@AllArgsConstructor
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
+@CrossOrigin ("*")
 public class MunicipalRestController {
     MunicipalRepository mr;
+
+
     @GetMapping("/getAllMunicipals")
     public List<Municipal> getAllMunicipals(){
         return mr.findAll();

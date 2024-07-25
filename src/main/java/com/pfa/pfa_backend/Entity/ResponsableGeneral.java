@@ -17,8 +17,8 @@ public class ResponsableGeneral extends Responsable {
     @OneToOne
     private Municipal municipal;
 
-    public ResponsableGeneral(String cin, String nom, String prenom, Date dn, String ln, String genre, String adr, String numTel, String email, String mdp, Municipal municipal) {
-        super(cin, nom, prenom, dn, ln, genre, adr, numTel, email, mdp);
+    public ResponsableGeneral(String cin, String nom, String prenom, Date dn, String ln, String genre, String adr, String numTel, String email, String mdp,Role role ,Municipal municipal) {
+        super(cin, nom, prenom, dn, ln, genre, adr, numTel, email, mdp, role);
         this.municipal = municipal;
     }
 

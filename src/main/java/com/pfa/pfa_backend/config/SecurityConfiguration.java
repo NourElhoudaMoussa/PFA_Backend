@@ -5,6 +5,7 @@ import com.pfa.pfa_backend.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
@@ -32,9 +33,10 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(request -> request.requestMatchers("/api/v1/auth/**")
                 .permitAll()
                 .requestMatchers("/api/v1/Responsable_General").hasAnyAuthority(Role.Responsable_General.name())
-                                .requestMatchers("/api/v1/Responsable_Service").hasAnyAuthority(Role.Responsable_Service.name())
-                                .requestMatchers("/api/v1/Citoyen").hasAnyAuthority(Role.Citoyen.name())
-                                .anyRequest().authenticated())
+                .requestMatchers("/api/v1/Responsable_Service").hasAnyAuthority(Role.Responsable_Service.name())
+                .requestMatchers("/api/v1/Citoyen").hasAnyAuthority(Role.Citoyen.name())
+                .requestMatchers("/api/getAllMunicipals").hasAnyAuthority(Role.Responsable_General.name())
+                .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(
                         jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class
